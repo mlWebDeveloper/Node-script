@@ -27,8 +27,8 @@
         res.writeHead(200, {
           'Content-Type': ContentType
         });
+        
         var streamFile = fs.createReadStream(filepath).pipe(res);
-
         streamFile.on('error', function() {
           res.writeHead(500);
           res.end();
